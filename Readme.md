@@ -5,6 +5,7 @@ This example illustrates how to add a new regular or recurrent appointment in co
 > **NOTE:**
 > It's essential that your data source type implements the [INotifyCollectionChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netframework-4.8) (e.g., [ObservableCollection\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netframework-4.8)). In this case, the **Scheduler Control** will receive notifications about its changes. 
 
+
 To add a new appointment, create a new data item instance, define its properties, and add it to your source. In this example, SchedulerControl's [SelectedInterval](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.SelectedInterval) property is bound to the **SelectedInterval** property from the view model. Its values are used in the data item's **Start** and **End** properties:
 ```cs
 protected Appt CreateAppt()
