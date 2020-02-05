@@ -1,6 +1,6 @@
 # How To: Create Appointments In Code
 
-This example illustrates how to add a new regular or recurrent appointment in code when the **Scheduler** is in bound mode.
+This example illustrates how to add a new regular or recurrent appointment programmatically when the **Scheduler** is in bound mode.
 
 > **NOTE:**
 > It's essential that your data source type implements the [INotifyCollectionChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netframework-4.8) (e.g., [ObservableCollection\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netframework-4.8)). In this case, the **Scheduler Control** will receive notifications about its changes. 
