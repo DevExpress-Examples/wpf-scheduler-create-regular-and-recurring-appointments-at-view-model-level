@@ -75,7 +75,7 @@ It is used at the view model level:
 public class MainViewModel 
 {
     ...
-	public virtual ISchedulerService SchedulerService { get { return null; } }
+	public virtual ISchedulerService SchedulerService { get { return this.GetService<ISchedulerService>(); } }
     ...
 	
 	public void AddAppt(bool recurrent = false)
