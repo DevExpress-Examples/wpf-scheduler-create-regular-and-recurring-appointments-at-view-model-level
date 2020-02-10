@@ -1,0 +1,60 @@
+﻿<dx:ThemedWindow x:Class="DXApplication14.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                 xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                 xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+                 xmlns:local="clr-namespace:DXApplication14"
+                 Width="1000" 
+                 Height="800"
+                 Title="MainWindow">
+
+    <dx:ThemedWindow.DataContext>
+        <local:MainViewModel/>
+    </dx:ThemedWindow.DataContext>
+
+    <DockPanel>
+        <dxb:MainMenuControl DockPanel.Dock="Top">
+            <dxb:BarButtonItem Content="Add a regular appointment">
+                <dxmvvm:Interaction.Behaviors>
+                    <dxmvvm:CompositeCommandBehavior CanExecuteCondition="AnyCommandCanBeExecuted">
+                        <dxmvvm:CommandItem Command="{Binding AddApptCommand}"
+                                            CommandParameter="false" />
+                        <dxmvvm:CommandItem CheckCanExecute="False"
+                                            Command="{Binding ElementName=scheduler,
+                                                              Path=Commands.ShowAppointmentWindowCommand}" />
+                    </dxmvvm:CompositeCommandBehavior>
+                </dxmvvm:Interaction.Behaviors>
+            </dxb:BarButtonItem>
+            <dxb:BarButtonItem Content="Add a recurrent appointment">
+                <dxmvvm:Interaction.Behaviors>
+                    <dxmvvm:CompositeCommandBehavior CanExecuteCondition="AnyCommandCanBeExecuted">
+                        <dxmvvm:CommandItem Command="{Binding AddApptCommand}"
+                                            CommandParameter="True" />
+                        <dxmvvm:CommandItem CheckCanExecute="False"
+                                            Command="{Binding ElementName=scheduler, 
+                                                              Path=Commands.ShowAppointmentWindowCommand}" />
+                    </dxmvvm:CompositeCommandBehavior>
+                </dxmvvm:Interaction.Behaviors>
+            </dxb:BarButtonItem>
+        </dxb:MainMenuControl>
+        <dxsch:SchedulerControl x:Name="scheduler"
+                                SelectedAppointmentsSource="{Binding SelectedAppointments}"
+                                SelectedInterval="{Binding Interval, Mode=TwoWay}">
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appointments}">
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings Description="Description"
+                                                   End="End"
+                                                   RecurrenceInfo="RecurrenceInfo"
+                                                   Start="Start"
+                                                   Subject="Subject"
+                                                   Type="Type" />
+                    </dxsch:DataSource.AppointmentMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+        </dxsch:SchedulerControl>
+    </DockPanel>
+
+</dx:ThemedWindow>
