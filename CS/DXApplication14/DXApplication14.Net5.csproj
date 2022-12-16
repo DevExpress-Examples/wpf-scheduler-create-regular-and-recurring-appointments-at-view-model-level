@@ -1,11 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DXApplication14</RootNamespace>
     <AssemblyName>DXApplication14</AssemblyName>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <Platforms>x86;AnyCPU</Platforms>
@@ -16,19 +23,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Data" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Data.Desktop" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Mvvm" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Printing.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Scheduler.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Scheduler.CoreDesktop" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Grid.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.LayoutControl" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Printing" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Ribbon" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Scheduling" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Colorful" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="21.1.*-*" />
+    <PackageReference Include="DevExpress.Data" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Data.Desktop" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Mvvm" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Printing.Core" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Scheduler.Core" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Scheduler.CoreDesktop" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Grid.Core" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.LayoutControl" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Printing" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Ribbon" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Scheduling" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Colorful" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="22.2.*-*" />
   </ItemGroup>
 </Project>
