@@ -10,7 +10,8 @@ This example defines View Model commands that add new regular and recurring appo
 
 ## Implementation Details
 
-> [!NOTE]
+> **Note**
+> 
 > Your data source type should implement the [INotifyCollectionChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-8.0) interface (for example, [ObservableCollection\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-8.0)). In this case, the **Scheduler Control** receives notifications about its changes. 
 
 ### Create a New Appointment
