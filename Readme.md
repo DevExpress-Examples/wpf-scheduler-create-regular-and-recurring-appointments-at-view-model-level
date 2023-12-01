@@ -3,9 +3,9 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# WPF Scheduler - Create Regular and Recurrent Appointments at the View Model Level
+# WPF Scheduler - Create Regular and Recurring Appointments at the View Model Level
 
-This example defines View Model commands that add new regular and recurrent appointments to the **Scheduler Control**.
+This example defines View Model commands that add new regular and recurring appointments to the **Scheduler Control**.
 
 ## Implementation Details
 
@@ -36,7 +36,7 @@ protected ApptViewModel CreateAppt(string subj, DateTime start, DateTime end, st
 
 1. Set the item **Type** property to [Pattern](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.AppointmentType).
 2. Use the [RecurrenceBuilder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.RecurrenceBuilder) class to generate a recurrence rule.
-3. Assign this rule to the **RecurrenceInfo** property to create a recurrent appointment.
+3. Assign this rule to the **RecurrenceInfo** property to create a recurring appointment.
 
 ```cs
 [Command]
