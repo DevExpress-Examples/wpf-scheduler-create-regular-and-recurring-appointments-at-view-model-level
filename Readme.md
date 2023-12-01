@@ -1,17 +1,24 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/238217751/22.2.2%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T859145)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to: Create regular and recurrent appointments at the view model level
 
-This example illustrates how to add a new regular or recurrent appointment programmatically when the **Scheduler** is in bound mode.
+# WPF Scheduler - Create Regular and Recurring Appointments at the View Model Level
 
-> **NOTE:**
-> It's essential that your data source type implements the [INotifyCollectionChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netframework-4.8) (e.g., [ObservableCollection\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=netframework-4.8)). In this case, the **Scheduler Control** will receive notifications about its changes. 
+This example defines View Model commands that add new regular and recurring appointments to the **Scheduler Control**.
 
+## Implementation Details
 
-To add a new appointment, create a new data item instance, define its properties, and add it to your source. In this example, SchedulerControl's [SelectedInterval](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.SelectedInterval) property is bound to the **Interval** property from the view model. Its values are used in the data item's **Start** and **End** properties:
+> [!NOTE]
+> Your data source type should implement the [INotifyCollectionChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-8.0) interface (for example, [ObservableCollection\<T\>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.observablecollection-1?view=net-8.0)). In this case, the **Scheduler Control** receives notifications about its changes. 
+
+### Create a New Appointment
+
+1. Create a new data item instance.
+2. Define item properties.
+3. Add this item to your source.
+
+In this example, the [SchedulerControl.SelectedInterval](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.SelectedInterval) property is bound to the **Interval** View Model property. Its values define **Start** and **End** properties of the new data item:
 
 ```cs
 protected ApptViewModel CreateAppt(string subj, DateTime start, DateTime end, string description) {
@@ -25,8 +32,11 @@ protected ApptViewModel CreateAppt(string subj, DateTime start, DateTime end, st
 }
 ```
 
-Set the item's **Type** property to [AppoinementType.Pattern](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.AppointmentType) and define a corresponding recurrence rule in the **RecurrenceInfo** property to create a recurrent appointment. Use [RecurrenceBuilder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.RecurrenceBuilder) to generate this rule:
+### Create a New Recurring Appointment
 
+1. Set the item **Type** property to [Pattern](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.AppointmentType).
+2. Use the [RecurrenceBuilder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.RecurrenceBuilder) class to generate a recurrence rule.
+3. Assign this rule to the **RecurrenceInfo** property to create a recurring appointment.
 
 ```cs
 [Command]
@@ -46,9 +56,13 @@ public void AddAppt(bool recurrent = false) {
 }
 ```
 
-Refer to the [How to: Create Recurrence in Code](https://docs.devexpress.com/WPF/119648/Controls-and-Libraries/Scheduler/Examples/How-to-Create-Recurrence-in-Code) article for more information about generating recurrence rules.
+### Edit the Created Appointment
 
-This example also illustrates how you can invoke EditAppointmentWindow for a newly created appointment. This functionality is implemented with the help of the [CompositeCommandBehavior](https://docs.devexpress.com/WPF/18124/mvvm-framework/behaviors/predefined-set/compositecommandbehavior) class. The first CommandItem's Command property is bound to a property from the view model. The second CommandItem's Command is bound to SchedulerControl's [Commands.ShowAppointmentWindowCommand](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerCommands.ShowAppointmentWindowCommand) command: 
+This example also illustrates how to invoke the [Appointment Window](https://docs.devexpress.com/WPF/119347/controls-and-libraries/scheduler/visual-elements/windows/appointment-window) for the newly created appointment:
+
+1. Attach the [CompositeCommandBehavior](https://docs.devexpress.com/WPF/18124/mvvm-framework/behaviors/predefined-set/compositecommandbehavior) to the button that should create appointments.
+2. Bind the first [CommandItem.Command](https://docs.devexpress.com/WPF/DevExpress.Mvvm.UI.CommandItem.Command) property to the View Model command that adds appointments.
+3. Bind the second [CommandItem.Command](https://docs.devexpress.com/WPF/DevExpress.Mvvm.UI.CommandItem.Command) property to the **Scheduler Control** [ShowAppointmentWindowCommand](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerCommands.ShowAppointmentWindowCommand).
 
 ```xaml
 <dxb:BarButtonItem Content="Add a regular appointment">
@@ -63,3 +77,17 @@ This example also illustrates how you can invoke EditAppointmentWindow for a new
     </dxmvvm:Interaction.Behaviors>
 </dxb:BarButtonItem>
 ```
+
+## Files to Review
+
+* [MainWindow.xaml](./CS/DXApplication14/MainWindow.xaml)
+* [MainViewModel.cs](./CS/DXApplication14/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/DXApplication14/MainViewModel.vb))
+
+## Documentation
+
+* [Create Regular and Recurrent Appointments at the View Model Level](https://docs.devexpress.com/WPF/401629/controls-and-libraries/scheduler/examples/How-to-create-regular-and-recurrent-appointments-at-the-view-model-level)
+* [Create Recurrence in Code](https://docs.devexpress.com/WPF/119648/controls-and-libraries/scheduler/examples/how-to-create-recurrence-in-code)
+
+## More Examples
+
+* [WPF Scheduler - Create Recurrent Appointments in Code](https://github.com/DevExpress-Examples/wpf-scheduler-create-recurrent-appointments-in-code)
