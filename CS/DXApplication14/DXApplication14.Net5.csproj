@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DXApplication14</RootNamespace>
@@ -23,19 +23,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Data" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Data.Desktop" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Mvvm" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Printing.Core" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Scheduler.Core" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Scheduler.CoreDesktop" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Core" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Grid.Core" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.LayoutControl" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Printing" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Ribbon" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Scheduling" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Colorful" Version="22.2.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Data" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Data.Desktop" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Mvvm" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Printing.Core" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Scheduler.Core" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Scheduler.CoreDesktop" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Grid.Core" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.LayoutControl" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Printing" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Ribbon" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Scheduling" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Colorful" Version="24.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="24.2.*-*" />
   </ItemGroup>
 </Project>
