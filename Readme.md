@@ -95,7 +95,7 @@ This example also illustrates how to invoke the [Appointment Window](https://doc
 
 * [WPF Scheduler - Create Recurrent Appointments in Code](https://github.com/DevExpress-Examples/wpf-scheduler-create-recurrent-appointments-in-code)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-create-regular-and-recurring-appointments-at-view-model-level&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-create-regular-and-recurring-appointments-at-view-model-level&~~~was_helpful=no)
 
